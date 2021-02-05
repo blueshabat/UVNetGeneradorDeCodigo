@@ -1,0 +1,67 @@
+﻿<platformUi:DialogWindow x:Class="UVNetGeneradorDeCodigo.Dialogos.VisorDependencias"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UVNetGeneradorDeCodigo.Dialogos"
+             xmlns:platformUi="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.15.0"
+             mc:Ignorable="d" d:DesignWidth="800" WindowStartupLocation="CenterScreen" Height="478.398">
+    <Window.Resources>
+        <ResourceDictionary>
+            <HierarchicalDataTemplate DataType="{x:Type local:Procedimiento}" ItemsSource="{Binding Procedimientos}">
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  x:Name="Line"/>
+                        <ColumnDefinition  x:Name="Rectangle" />
+                    </Grid.ColumnDefinitions>
+                    <Border  Grid.Column="3" Name="bdr" CornerRadius="3" BorderThickness="1" Width="Auto" Height="Auto" MinWidth="50" Margin="0, 5, 0, 5" SnapsToDevicePixels="True">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1" Opacity="0.3">
+                                <GradientStop Color="#EEFFFFFF" Offset="0" />
+                                <GradientStop Color="#22000000" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
+                                <GradientStop Color="LightGray" Offset="0" />
+                                <GradientStop Color="Gray" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <Expander FlowDirection="RightToLeft">
+                            <Expander.Header>
+                                <TextBlock Text="{Binding Nombre}" FlowDirection="LeftToRight" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10, 0, 10, 0"/>
+                            </Expander.Header>
+                            <TextBlock TextWrapping="Wrap" FontSize="18" MaxWidth="180" FlowDirection="LeftToRight">Aquí se cargarán más detalles del procedimiento, tales como los parámetros de entrada y un boton para editar su definición
+                            </TextBlock>
+                        </Expander>
+                    </Border>
+                </Grid>
+            </HierarchicalDataTemplate>
+        </ResourceDictionary>
+    </Window.Resources>
+    <TreeView Name="tvDependencias">
+        <TreeView.Resources>
+            <LinearGradientBrush x:Key="SelectedItemAreaBrush" StartPoint="0.5, 0" EndPoint="0.5, 1" Opacity="0.4">
+                <GradientStop Color="#22000000" Offset="0" />
+                <GradientStop Color="#EEFFFFFF" Offset="1" />
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="SelectedItemBorderBrush" StartPoint="0.5, 0" EndPoint="0.5, 1">
+                <GradientStop Color="Gray" Offset="0" />
+                <GradientStop Color="LightGray" Offset="1" />
+            </LinearGradientBrush>
+            <DropShadowBitmapEffect x:Key="DropShadowEffect" />
+        </TreeView.Resources>
+        <TreeView.ItemContainerStyle>
+            <Style TargetType="{x:Type TreeViewItem}">
+                <Setter Property="IsExpanded" Value="True" />
+                <Setter Property="Focusable" Value="false" />
+                <Style.Triggers>
+                    <Trigger Property="IsSelected" Value="true">
+                        <Setter Property="Panel.Background" Value="{StaticResource SelectedItemAreaBrush}" />
+                        <Setter Property="Border.BorderBrush" Value="{StaticResource SelectedItemBorderBrush}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </TreeView.ItemContainerStyle>
+    </TreeView>
+</platformUi:DialogWindow>

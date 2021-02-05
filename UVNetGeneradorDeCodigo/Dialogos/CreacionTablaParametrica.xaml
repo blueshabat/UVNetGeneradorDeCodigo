@@ -1,0 +1,17 @@
+﻿<API:CDialogo x:Class="UVNetGeneradorDeCodigo.Dialogos.CreacionTablaParametrica"
+              x:TypeArguments="ScriptsSQL:CCreacionTablaParametrica"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              xmlns:API="clr-namespace:UVNetGeneradorDeCodigo.API"
+              xmlns:ScriptsSQL="clr-namespace:UVNetGeneradorDeCodigo.Generador.ScriptsSQL"
+              mc:Ignorable="d" WindowStartupLocation="CenterScreen" Height="142.5" Width="329.375">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Label Content="Nombre"/>
+            <TextBox x:Name="TxtNombreTabla" Height="23" TextWrapping="Wrap" Text="" MaxLines="1" MaxLength="60" CharacterCasing="Upper" Margin="10"/>
+            <Button Content="Crear" Click="BtnCrear_Click" Height="22" x:Name="button1" Margin="0,15,0,0" HorizontalAlignment="Center" MinWidth="50"/>
+        </StackPanel>
+    </Grid>
+</API:CDialogo>

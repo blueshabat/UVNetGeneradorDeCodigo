@@ -1,0 +1,8 @@
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\UVNetGeneradorDeCodigo\\UVNetGeneradorDeCodigo.dll
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\UVNetGeneradorDeCodigo\\Microsoft.SqlServer.ConnectionInfo.dll
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\UVNetGeneradorDeCodigo\\SQLEditors.dll
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\UVNetGeneradorDeCodigo\\SqlWorkbench.Interfaces.dll
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\UVNetGeneradorDeCodigo\\UVNetGeneradorDeCodigo.pkgdef
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\UVNetGeneradorDeCodigo\\logo-univida.bmp
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\UVNetGeneradorDeCodigo\\createTemplateManifests.cache
+C:\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\UVNetGeneradorDeCodigo\\extension.vsixmanifest

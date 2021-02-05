@@ -1,0 +1,35 @@
+﻿<API:CDialogo x:Class="UVNetGeneradorDeCodigo.Dialogos.ModificacionProceso"
+              x:TypeArguments="ScriptsSQL:CModificacionProceso"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              xmlns:API="clr-namespace:UVNetGeneradorDeCodigo.API"
+              xmlns:ScriptsSQL="clr-namespace:UVNetGeneradorDeCodigo.Generador.ScriptsSQL"
+              mc:Ignorable="d" WindowStartupLocation="CenterScreen" d:DesignHeight="450" d:DesignWidth="800" >
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Label Content="Proceso"/>
+            <ComboBox x:Name="CbxProcesos" SelectionChanged="SeHaSeleccionadoUnProceso">
+                <ComboBoxItem Content="Seleccione un proceso" IsSelected="True"/>
+            </ComboBox>
+            <Label Content="Parámetros" Margin="0,10,0,0"/>
+            <DataGrid x:Name="dgParametros" AutoGenerateColumns="False" ItemsSource="{Binding parametros}" CanUserAddRows="true" HorizontalAlignment="Center" SelectionChanged="VerificarPosibilidadCreacionProcedimientosObtencion" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Nombre}" Header="Nombre"/>
+                    <DataGridTextColumn Binding="{Binding TipoDato}" Header="Tipo"/>
+                    <DataGridCheckBoxColumn Header="PRE" Binding="{Binding PRESeleccionado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ></DataGridCheckBoxColumn>
+                    <DataGridCheckBoxColumn Header="EN" Binding="{Binding ENSeleccionado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridCheckBoxColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <TextBlock TextWrapping="Wrap" Text="No se deben incluir los parámetros de salida (@O_EXITO, @O_MENSAJE, @O_RESULTADO, etc) ni los parámetros de indentificación (@I_USUARIO AUT y @I_CODIGO_SISTEMA)" FontSize="9" TextAlignment="Right" Margin="10,10,10,0"/>
+            <GroupBox Header="Procedimientos de obtención" Margin="0,10,0,0" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <CheckBox x:Name="ChbCrearProcedimientosObtencionPRE" Content="PRE" Height="18" Cursor="Hand" HorizontalAlignment="Center" Margin="46,10,46,0"/>
+                    <CheckBox x:Name="ChbCrearProcedimientosObtencionEN" Content="EN" Height="18" Cursor="Hand" HorizontalAlignment="Center" Margin="46,10,46,0"/>
+                </StackPanel>
+            </GroupBox>
+            <Button Content="Modificar" Click="BtnModificar_Click" Height="22" x:Name="button1" Margin="0,15,0,0" HorizontalAlignment="Center" MinWidth="50"/>
+        </StackPanel>
+    </Grid>
+</API:CDialogo>

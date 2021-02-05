@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{FC648EAA-6E1B-4D6C-813F-51B492C86E31}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UVNetGeneradorDeCodigo</RootNamespace>
+    <AssemblyName>UVNetGeneradorDeCodigo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <GeneratePkgDefFile>true</GeneratePkgDefFile>
+    <UseCodebase>true</UseCodebase>
+    <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
+    <IncludeDebugSymbolsInVSIXContainer>false</IncludeDebugSymbolsInVSIXContainer>
+    <IncludeDebugSymbolsInLocalVSIXDeployment>false</IncludeDebugSymbolsInLocalVSIXDeployment>
+    <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
+    <CopyOutputSymbolsToOutputDirectory>true</CopyOutputSymbolsToOutputDirectory>
+    <StartAction>Program</StartAction>
+    <StartProgram Condition="'$(DevEnvDir)' != ''">$(DevEnvDir)devenv.exe</StartProgram>
+    <StartArguments>/rootsuffix Exp</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CopyVsixExtensionFiles>True</CopyVsixExtensionFiles>
+    <CopyVsixExtensionLocation>C:\Program Files %28x86%29\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\UVNetGeneradorDeCodigo</CopyVsixExtensionLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CopyVsixExtensionFiles>True</CopyVsixExtensionFiles>
+    <CopyVsixExtensionLocation>C:\Program Files %28x86%29\Microsoft SQL Server Management Studio 18\Common7\IDE\Extensions\UVNetGeneradorDeCodigo</CopyVsixExtensionLocation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="API\CConstructorDeScripts.cs" />
+    <Compile Include="API\CDialogo.cs" />
+    <Compile Include="API\CMenu.cs" />
+    <Compile Include="API\CExploradorObjetos.cs" />
+    <Compile Include="Comandos\CInicializador.cs" />
+    <Compile Include="Dialogos\CreacionProceso.xaml.cs">
+      <DependentUpon>CreacionProceso.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\CreacionTablaParametrica.xaml.cs">
+      <DependentUpon>CreacionTablaParametrica.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\CreacionTransicionParametricas.xaml.cs">
+      <DependentUpon>CreacionTransicionParametricas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\ModificacionProceso.xaml.cs">
+      <DependentUpon>ModificacionProceso.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\SeleccionColumnas.xaml.cs">
+      <DependentUpon>SeleccionColumnas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogos\VisorDependencias.xaml.cs">
+      <DependentUpon>VisorDependencias.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Generador\CSharp\CCreacionClaseCSharpDeParametrosDeEntrada.cs" />
+    <Compile Include="Generador\CSharp\CCreacionClaseCSharpDTO.cs" />
+    <Compile Include="Generador\CSharp\CCreacionMetodoParaAgenteDeServicios.cs" />
+    <Compile Include="Generador\ScriptsSQL\CCreacionProceso.cs" />
+    <Compile Include="Generador\ScriptsSQL\CCreacionTablaParametrica.cs" />
+    <Compile Include="Generador\ScriptsSQL\CCreacionVista.cs" />
+    <Compile Include="Generador\ScriptsSQL\CModificacionProceso.cs" />
+    <Compile Include="Generador\ScriptsSQL\CProcedimientoValidacionExistenciasYParametros.cs" />
+    <Compile Include="Menus\CBaseDeDatos.cs" />
+    <Compile Include="Menus\CCarpetaTablas.cs" />
+    <Compile Include="Menus\CCarpetaVistas.cs" />
+    <Compile Include="Menus\CProcedimiento.cs" />
+    <Compile Include="Menus\CTabla.cs" />
+    <Compile Include="API\CSubMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="API\CElementoMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\CVista.cs" />
+    <Compile Include="Menus\Elementos\BaseDeDatos\CCreacionProceso.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\BaseDeDatos\CModificacionProceso.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\ProcedimientoAlmacenado\CCopiaEjecucionDeProcedimiento.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\ProcedimientoAlmacenado\CCreacionClaseCSharpDeParametrosDeEntrada.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\ProcedimientoAlmacenado\CCreacionMetodoParaAgenteDeServicios.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\ProcedimientoAlmacenado\CCreacionProcedimientoFront.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\ProcedimientoAlmacenado\CVisorDeDependencias.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\Tabla\CCreacionProcedimientos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\BaseDeDatos\CCreacionTablaParametrica.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\Tabla\CCreacionTransicionParametricas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\Tabla\CCreacionValidaciones.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\Tabla\CCreacionVista.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\Tabla\CProcedimientoAlta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\Tabla\CProcedimientoBaja.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\Tabla\CProcedimientoListado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\Tabla\CProcedimientoModificacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\Tabla\CProcedimientoObtencion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\Tabla\CProcedimientoValidacionExistenciaDependenciaTablas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\Tabla\CProcedimientoValidacionParametrosYExistencias.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\Tabla\CProcedimientoValidacionRegistro.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Elementos\Vista\CRecompilarVistas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modelos\CColumnaTabla.cs" />
+    <Compile Include="Modelos\CColumnaVista.cs" />
+    <Compile Include="Modelos\CDependenciaProcedimiento.cs" />
+    <Compile Include="Modelos\CModificacionProceso.cs" />
+    <Compile Include="Modelos\CParametro.cs" />
+    <Compile Include="Modelos\CParametroProcedimiento.cs" />
+    <Compile Include="Modelos\CParametroProceso.cs" />
+    <Compile Include="Modelos\ETipoProcedimiento.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Repositorio\CRepositorio.cs" />
+    <Compile Include="Repositorio\IRepositorio.cs" />
+    <Compile Include="Generador\ScriptsSQL\CEjecucionDeProcedimiento.cs" />
+    <Compile Include="Generador\ScriptsSQL\CProcedimientoAlta.cs" />
+    <Compile Include="Generador\ScriptsSQL\CProcedimientoBaja.cs" />
+    <Compile Include="Generador\ScriptsSQL\CProcedimientoListado.cs" />
+    <Compile Include="Generador\ScriptsSQL\CProcedimientoModificacion.cs" />
+    <Compile Include="Generador\ScriptsSQL\CProcedimientoObtencion.cs" />
+    <Compile Include="Generador\ScriptsSQL\CProcedimientoValidacionExistenciaDependenciaTablas.cs" />
+    <Compile Include="Generador\ScriptsSQL\CProcedimientoValidacionRegistro.cs" />
+    <Compile Include="Generador\ScriptsSQL\CTransicionParametricas.cs" />
+    <Compile Include="UVNetGeneradorDeCodigoPackage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="source.extension.vsixmanifest">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo">
+      <HintPath>Lib\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SQLEditors">
+      <HintPath>Lib\SQLEditors.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlWorkbench.Interfaces">
+      <HintPath>Lib\SqlWorkbench.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="15.0.0" ExcludeAssets="runtime">
+      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.5.2047" />
+    <PackageReference Include="System.ValueTuple">
+      <Version>4.5.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <VSCTCompile Include="UVNetGeneradorDeCodigoPackage.vsct">
+      <ResourceName>Menus.ctmenu</ResourceName>
+    </VSCTCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo-univida.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Dialogos\CreacionProceso.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogos\CreacionTablaParametrica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogos\CreacionTransicionParametricas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogos\ModificacionProceso.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogos\SeleccionColumnas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogos\VisorDependencias.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
